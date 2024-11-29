@@ -1,5 +1,4 @@
-// npm install -g typescript
-// 
-// tsc main.ts
+// tsc main.ts -w
 
 console.log("Hola a todos!");
+console.log("Hot reload con watch");

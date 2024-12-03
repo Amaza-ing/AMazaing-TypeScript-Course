@@ -1,12 +1,12 @@
 // Interfaces
 
-interface Director {
+interface Director<T> {
   name: string;
   age: number;
-  data: any;
+  data: T;
 }
 
-const director1: Director = {
+const director1: Director<string> = {
   name: "Peter Jackson",
   age: 60,
   data: "He is Amazing"

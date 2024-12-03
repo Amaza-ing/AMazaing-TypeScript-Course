@@ -1,15 +1,15 @@
 // Clases
 
 class Movie {
-  title: string;
-  duration: number;
-  hasOscars: boolean;
+  // public title: string;
+  // private duration: number;
+  // readonly hasOscars: boolean;
 
-  constructor(title: string, duration: number, hasOscars: boolean) {
-    this.title = title;
-    this.duration = duration;
-    this.hasOscars = hasOscars;
-  }
+  constructor(
+    public title: string,
+    private duration: number,
+    readonly hasOscars: boolean
+  ) {}
 
   getInfo() {
     return `Title: ${this.title} - Duration: ${this.duration} - Has Oscars: ${this.hasOscars}`;
@@ -19,5 +19,9 @@ class Movie {
 const movie1 = new Movie("El Señor de los Anillos", 300, true);
 const movie2 = new Movie("Harry Potter", 120, true);
 
-console.log(movie1, movie2);
+movie1.title = "Star Wars";
+// movie1.duration = 200;
+// movie1.hasOscars = false;
 
+console.log(movie1, movie2);
+console.log(movie1.getInfo());

@@ -1,4 +1,32 @@
-// Inheritance
+// Interfaces
+
+interface Director {
+  name: string;
+  age: number;
+  data: any;
+}
+
+const director1: Director = {
+  name: "Peter Jackson",
+  age: 60,
+  data: "He is Amazing"
+}
+
+console.log(director1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class Movie {
   constructor(
@@ -36,11 +64,11 @@ const movie2 = new Movie("Harry Potter", 120, true);
 
 movie1.title = "Star Wars";
 
-console.log(movie1, movie2);
-console.log(movie1.getInfo());
+// console.log(movie1, movie2);
+// console.log(movie1.getInfo());
 
 const scream = new HorrorMovie("Scream", 90, false, true);
 
-console.log(scream);
-scream.displayAlert()
-console.log(scream.getInfo());
+// console.log(scream);
+// scream.displayAlert()
+// console.log(scream.getInfo());

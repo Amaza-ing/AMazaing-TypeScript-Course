@@ -1,5 +1,11 @@
 "use strict";
-// Inheritance
+// Interfaces
+const director1 = {
+    name: "Peter Jackson",
+    age: 60,
+    data: "He is Amazing"
+};
+console.log(director1);
 class Movie {
     constructor(title, duration, hasOscars) {
         this.title = title;
@@ -25,9 +31,9 @@ class HorrorMovie extends Movie {
 const movie1 = new Movie("El Señor de los Anillos", 300, true);
 const movie2 = new Movie("Harry Potter", 120, true);
 movie1.title = "Star Wars";
-console.log(movie1, movie2);
-console.log(movie1.getInfo());
+// console.log(movie1, movie2);
+// console.log(movie1.getInfo());
 const scream = new HorrorMovie("Scream", 90, false, true);
-console.log(scream);
-scream.displayAlert();
-console.log(scream.getInfo());
+// console.log(scream);
+// scream.displayAlert()
+// console.log(scream.getInfo());

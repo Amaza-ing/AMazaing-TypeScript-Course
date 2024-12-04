@@ -3,9 +3,9 @@
 // npm init
 // npm i webpack webpack-cli ts-loader typescript -D
 
-import { HorrorMovie } from "./classes/HorrorMovie.js";
-import { Movie } from "./classes/Movie.js";
-import { Director } from "./Models/Director.js";
+import { HorrorMovie } from "./classes/HorrorMovie";
+import { Movie } from "./classes/Movie";
+import { Director } from "./Models/Director";
 
 const director1: Director<string> = {
   name: "Peter Jackson",

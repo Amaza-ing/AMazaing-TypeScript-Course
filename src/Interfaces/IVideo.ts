@@ -1,4 +1,4 @@
-import { Director } from "../Models/Director.js";
+import { Director } from "../Models/Director";
 
 export interface IVideo<T> {
   title: string;

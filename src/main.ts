@@ -17,9 +17,9 @@ const director1: Director<string> = {
 
 
 
-interface IVideo {
+interface IVideo<T> {
   title: string;
-  // duration: number; // Only Public methods and properties
+  director: Director<T>;
   getDuration(): number;
   play(): void;
 }
@@ -27,11 +27,12 @@ interface IVideo {
 
 
 
-class Movie implements IVideo{
+class Movie implements IVideo<string>{
   constructor(
     public title: string,
     private duration: number,
-    readonly hasOscars: boolean
+    readonly hasOscars: boolean,
+    public director: Director<string>
   ) {}
 
   getDuration(): number {
@@ -52,9 +53,10 @@ class HorrorMovie extends Movie {
     title: string,
     duration: number,
     hasOscars: boolean,
+    director: Director<string>,
     public hasJumpScares: boolean
   ) {
-    super(title, duration, hasOscars);
+    super(title, duration, hasOscars, director);
   }
 
   displayAlert() {
@@ -66,16 +68,16 @@ class HorrorMovie extends Movie {
   }
 }
 
-const movie1 = new Movie("El Señor de los Anillos", 300, true);
-const movie2 = new Movie("Harry Potter", 120, true);
+const movie1 = new Movie("El Señor de los Anillos", 300, true, director1);
+const movie2 = new Movie("Harry Potter", 120, true, director1);
 
-movie1.title = "Star Wars";
+// movie1.title = "Star Wars";
 
 console.log(movie1, movie2);
 movie1.play();
 // console.log(movie1.getInfo());
 
-const scream = new HorrorMovie("Scream", 90, false, true);
+const scream = new HorrorMovie("Scream", 90, false, director1, true);
 
 // console.log(scream);
 // scream.displayAlert()

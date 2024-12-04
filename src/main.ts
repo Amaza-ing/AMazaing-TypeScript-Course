@@ -24,7 +24,29 @@ interface IVideo<T> {
   play(): void;
 }
 
+interface IEpisodic {
+  episodes: number;
+}
 
+
+
+
+class Series implements IVideo<string>, IEpisodic {
+  constructor (
+    public title: string,
+    private duration: number,
+    public director: Director<string>,
+    public episodes: number
+  ) {}
+
+  public getDuration(): number {
+    return this.duration;
+  }
+
+  public play(): void {
+    console.log("Playing a series");    
+  }
+}
 
 
 class Movie implements IVideo<string>{

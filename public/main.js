@@ -5,6 +5,20 @@ const director1 = {
     age: 60,
     data: "He is Amazing"
 };
+class Series {
+    constructor(title, duration, director, episodes) {
+        this.title = title;
+        this.duration = duration;
+        this.director = director;
+        this.episodes = episodes;
+    }
+    getDuration() {
+        return this.duration;
+    }
+    play() {
+        console.log("Playing a series");
+    }
+}
 class Movie {
     constructor(title, duration, hasOscars, director) {
         this.title = title;

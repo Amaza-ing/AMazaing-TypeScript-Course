@@ -1,4 +1,4 @@
-// Interfaces
+// Interfaces y clases
 
 interface Director<T> {
   name: string;
@@ -12,31 +12,38 @@ const director1: Director<string> = {
   data: "He is Amazing"
 }
 
-console.log(director1);
+// console.log(director1);
 
 
 
 
+interface IVideo {
+  title: string;
+  // duration: number; // Only Public methods and properties
+  getDuration(): number;
+  play(): void;
+}
 
 
 
 
-
-
-
-
-
-
-
-class Movie {
+class Movie implements IVideo{
   constructor(
     public title: string,
     private duration: number,
     readonly hasOscars: boolean
   ) {}
 
+  getDuration(): number {
+    return this.duration;
+  }
+
   getInfo() {
     return `Title: ${this.title} - Duration: ${this.duration} - Has Oscars: ${this.hasOscars}`;
+  }
+
+  play(): void {
+    console.log(`Playing ${this.title}`);    
   }
 }
 
@@ -64,7 +71,8 @@ const movie2 = new Movie("Harry Potter", 120, true);
 
 movie1.title = "Star Wars";
 
-// console.log(movie1, movie2);
+console.log(movie1, movie2);
+movie1.play();
 // console.log(movie1.getInfo());
 
 const scream = new HorrorMovie("Scream", 90, false, true);

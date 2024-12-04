@@ -1,7 +1,7 @@
 "use strict";
 // Namespaces
 const user = {
-    id: 1234,
+    uuid: "1234xxx",
     username: "Adrián",
 };
 console.log(user);

@@ -13,8 +13,15 @@ namespace Common {
   }
 }
 
-const user: Common.User = {
-  id: 1234,
+namespace Special {
+  export interface User {
+    uuid: string;
+    username: string;
+  }
+}
+
+const user: Special.User = {
+  uuid: "1234xxx",
   username: "Adrián",
 };
 

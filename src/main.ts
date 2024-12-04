@@ -1,4 +1,7 @@
-// Módulos
+// Webpack
+
+// npm init
+// npm i webpack webpack-cli ts-loader typescript -D
 
 import { HorrorMovie } from "./classes/HorrorMovie.js";
 import { Movie } from "./classes/Movie.js";

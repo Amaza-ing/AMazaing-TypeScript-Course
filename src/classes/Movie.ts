@@ -1,4 +1,7 @@
-export class Movie implements IVideo<string>{
+import { IVideo } from "../Interfaces/IVideo.js";
+import { Director } from "../Models/Director.js";
+
+export class Movie implements IVideo<string> {
   constructor(
     public title: string,
     private duration: number,

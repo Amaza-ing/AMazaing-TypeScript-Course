@@ -1,7 +1,6 @@
-// Webpack
+// Webpack dev server
 
-// npm init
-// npm i webpack webpack-cli ts-loader typescript -D
+// npm i webpack-dev-server -D
 
 import { HorrorMovie } from "./classes/HorrorMovie";
 import { Movie } from "./classes/Movie";

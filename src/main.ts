@@ -3,6 +3,7 @@
 import { HorrorMovie } from "./classes/HorrorMovie";
 import { Movie } from "./classes/Movie";
 import { Director } from "./Models/Director";
+import { User } from "./Models/User";
 
 const director1: Director<string> = {
   name: "Peter Jackson",
@@ -62,7 +63,7 @@ const fetchUser = async () => {
   const API_URL = "https://jsonplaceholder.typicode.com/users/1";
   const response = await fetch(API_URL);
   const data = await response.json();
-  return data;
+  return data as User;
 }
 
 const loginBtn = document.querySelector(".login-btn") as HTMLButtonElement;

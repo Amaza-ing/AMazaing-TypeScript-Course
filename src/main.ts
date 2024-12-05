@@ -41,6 +41,15 @@ const addMovie = (movie: Movie) => {
   movieList.append(li);
 };
 
+let moviesShown = false;
+
 btn.addEventListener("click", () => {
-  movieArr.forEach((movie) => addMovie(movie));
+  if (moviesShown) {
+    movieList.innerHTML = "";
+    btn.textContent = "Show Movies";
+  } else {
+    movieArr.forEach((movie) => addMovie(movie));
+    btn.textContent = "Hide Movies";
+  }
+  moviesShown = !moviesShown;
 });

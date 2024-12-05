@@ -28,5 +28,32 @@ const createNote = (title: string) => {
 const note1 = createNote("Ir a por el Pan");
 const note2 = createNote("Contraseña del WiFi: 123456");
 
-console.log(note1);
-console.log(note2);
+const notes: Note[] = [];
+
+notes.push(note1);
+notes.push(note2);
+
+const createNoteCards = (notes: Note[]) => {
+  const noteList = document.querySelector(".note-list") as HTMLUListElement;
+
+  notes.forEach((note) => {
+    const li = document.createElement("li");
+    const input = document.createElement("input");
+    const checkbox = document.createElement("input");
+
+    input.classList.add("title");
+    input.value = note.getTitle();
+
+    checkbox.type = "checkbox";
+
+    li.classList.add("note-card");
+    li.append(input);
+    li.append(checkbox);
+
+    noteList.append(li);
+  });
+};
+
+const btn = document.querySelector(".btn") as HTMLButtonElement;
+
+btn.addEventListener("click", () => createNoteCards(notes));

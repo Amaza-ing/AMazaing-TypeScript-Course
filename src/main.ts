@@ -1,4 +1,6 @@
-// HTML & Eventos
+// Testing with jest
+
+// npm i jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @types/jest -D
 
 import { HorrorMovie } from "./classes/HorrorMovie";
 import { Movie } from "./classes/Movie";

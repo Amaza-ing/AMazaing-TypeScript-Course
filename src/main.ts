@@ -1,6 +1,4 @@
-// Testing with jest
-
-// npm i jest babel-jest @babel/core @babel/preset-env @babel/preset-typescript @types/jest -D
+// Fetch
 
 import { HorrorMovie } from "./classes/HorrorMovie";
 import { Movie } from "./classes/Movie";
@@ -55,3 +53,22 @@ btn.addEventListener("click", () => {
   }
   moviesShown = !moviesShown;
 });
+
+
+
+
+
+const fetchUser = async () => {
+  const API_URL = "https://jsonplaceholder.typicode.com/users/1";
+  const response = await fetch(API_URL);
+  const data = await response.json();
+  return data;
+}
+
+const loginBtn = document.querySelector(".login-btn") as HTMLButtonElement;
+const userName = document.querySelector(".user") as HTMLParagraphElement;
+
+loginBtn.addEventListener("click", async () => {
+  const user = await fetchUser();
+  userName.textContent = user.name;
+})

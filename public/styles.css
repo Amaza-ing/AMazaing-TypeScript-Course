@@ -1,3 +1,21 @@
+body {
+  margin: 0;
+}
+
+.header {
+  padding: 5px;
+  background-color: darkblue;
+  color: white;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+
+  .user {
+    margin: 0;
+  }
+}
+
 .movie-list {
   margin: 0;
   padding: 0;

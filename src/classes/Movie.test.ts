@@ -13,4 +13,12 @@ describe("Movie tests", () => {
   it("title should be La Naranja mecánica", () => {
     expect(movie.title).toBe("La Naranja Mecánica");
   });
+
+  it("duration should be 100", () => {
+    expect(movie.getDuration()).toBe(100);
+  })
+
+  it("should get 1h 40m", () => {
+    expect(movie.geTHoursMinutes()).toBe("1h 40m");
+  })
 });

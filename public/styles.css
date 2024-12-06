@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: lightblue;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.header {
+  padding: 40px;
+  background-color: #000022;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .page-name {
+    margin: 0;
+  }
+}
+
+.notes-main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+
+  .btn {
+    padding: 10px 5px;
+    font-size: 1.5rem;
+  }
+
+  .note-list {
+    background-image: url("./assets/cork.jpg");
+    border: 10px solid brown;
+    width: 70%;
+    min-width: 450px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    .note-card {
+      width: 400px;
+      background-color: lightyellow;
+      border: 3px solid #000022;
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      transition: all 0.2s;
+
+      .title {
+        width: 90%;
+        background-color: transparent;
+        border: none;
+        font-size: 1.2rem;
+        font-weight: bold;
+      }
+
+      [type="checkbox"] {
+        transform: scale(2) translateX(-2px);
+      }
+    }
+    .note-card:hover {
+      border: 3px solid black;
+      box-shadow: 0 0 10px;
+    }
+    .note-card:has(input:checked) {
+      border: 3px solid lightgray;
+      background-color: lightgray;
+
+      .title {
+        font-weight: 100;
+      }
+    }
+  }
+}

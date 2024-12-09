@@ -1,13 +1,24 @@
 import { Note } from "./Note";
 
 export class NoteList {
-  static createNoteCards(notes: Note[]) {
+  static notes: Note[] = [];
+
+  static createNote = (title: string) => {
+    const id = Date.now().toString(36) + Math.random().toString(36).slice(2);
+
+    const newNote = new Note(id, title);
+    this.notes.unshift(newNote);
+
+    this.createNoteCards();
+  };
+
+  static createNoteCards() {
     const noteList = document.querySelector(".note-list") as HTMLUListElement;
     const formItem = document.querySelector(".form-item") as HTMLLIElement;
     noteList.innerHTML = "";
     noteList.append(formItem);
 
-    notes.forEach((note) => {
+    this.notes.forEach((note) => {
       const li = document.createElement("li");
       const input = document.createElement("input");
       const checkbox = document.createElement("input");

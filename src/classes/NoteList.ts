@@ -10,6 +10,7 @@ export class NoteList {
     this.notes.unshift(newNote);
 
     this.createNoteCards();
+    this.updateEvents();
   };
 
   static createNoteCards() {
@@ -27,6 +28,7 @@ export class NoteList {
       input.value = note.getTitle();
 
       checkbox.type = "checkbox";
+      checkbox.checked = note.getCompleted();
 
       li.classList.add("note-card");
       li.append(input);
@@ -34,5 +36,22 @@ export class NoteList {
 
       noteList.append(li);
     });
+  }
+
+  static updateEvents() {
+    const noteCards = document.querySelectorAll(".note-card");
+    const noteCardsArr = [...noteCards] as HTMLLIElement[];
+
+    noteCardsArr.forEach((card, index) =>
+      card.childNodes.forEach((input) => {
+        const titleInput = card.childNodes[0] as HTMLInputElement;
+        const checkboxInput = card.childNodes[1] as HTMLInputElement;
+
+        input.addEventListener("input", () => {
+          this.notes[index].setTitle(titleInput.value);
+          this.notes[index].setCompleted(!!checkboxInput.checked);
+        });
+      })
+    );
   }
 }

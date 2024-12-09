@@ -10,4 +10,5 @@ noteForm.addEventListener("submit", (e) => {
   const input = form.elements[0] as HTMLInputElement;
 
   NoteList.createNote(input.value);
+  input.value = "";
 });

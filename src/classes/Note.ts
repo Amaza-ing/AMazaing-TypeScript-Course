@@ -20,4 +20,8 @@ export class Note {
   setCompleted(isCompleted: boolean) {
     this.isCompleted = isCompleted;
   }
+
+  getLength() {
+    return this.title.length;
+  }
 }
